@@ -1,4 +1,4 @@
-VolleyDemo
+ViewHolder anti pattern.
 ==========
 
-Very simple demo of the Volley networking lib for android.
+Showing an alternative approach to using ViewHolder to speed up adapters.
