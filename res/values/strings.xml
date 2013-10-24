@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">VolleyDemo</string>
+
+    <string
+    name="title_item_detail">Item Detail</string>
+
+    <string-array name="string_array">
+    <item>Afghanistan</item>
+    <item>Albania</item>
+    <item>Algeria</item>
+    <item>Angola</item>
+    <item>Andorra</item>
+    <item>Antigua &amp; Barbuda</item>
+    <item>Argentina</item>
+    <item>Armenia</item>
+    <item>Australia</item>
+    <item>Austria</item>
+    <item>Azerbaijan</item>
+    <item>Bahamas</item>
+    <item>Bahrain</item>
+    <item>Bangladesh</item>
+    <item>Barbados</item>
+    <item>Belarus</item>
+    <item>Belgium</item>
+    <item>Belize</item>
+    <item>Benin</item>
+    <item>Bhutan</item>
+    <item>Bolivia</item>
+    <item>Bosnia &amp; Herzegovina</item>
+    <item>Botswana</item>
+    <item>Brazil</item>
+    <item>Brunei</item>
+    <item>Darussalam</item>
+    <item>Bulgaria</item>
+    <item>Burkina</item>
+    <item>Faso</item>
+    <item>Burma</item>
+    <item>Burundi</item>
+    <item>Cambodia</item>
+    <item>Cameroon</item>
+    <item>Canada</item>
+    <item>Cape Verde</item>
+    <item>Central African Republic</item>
+    <item>Chad</item>
+    <item>Chile</item>
+    <item>China</item>
+    <item>Colombia</item>
+    <item>Comoros</item>
+    <item>Congo</item>
+    <item>Costa Rica</item>
+    <item>Cote Ivoire</item>
+    <item>Croatia</item>
+    <item>Cuba</item>
+    <item>Cyprus</item>
+    <item>Czech Republic</item>
+    </string-array>
+    
+</resources>
