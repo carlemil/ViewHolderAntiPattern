@@ -10,13 +10,13 @@ import android.widget.TextView;
 /**
  * Created by erbsman on 7/25/13.
  */
-public class NoViewHolderAdapter extends BaseAdapter {
+public class ItemAdapter extends BaseAdapter {
 
     private final Context mContext;
 
     private String data[];
 
-    public NoViewHolderAdapter(Context context) {
+    public ItemAdapter(Context context) {
         mContext = context;
         data = mContext.getResources().getStringArray(R.array.string_array);
     }

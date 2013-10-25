@@ -12,7 +12,7 @@ public class ItemListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setListAdapter(new NoViewHolderAdapter(getActivity().getBaseContext()));
+        setListAdapter(new ItemAdapter(getActivity().getBaseContext()));
     }
 
 }
