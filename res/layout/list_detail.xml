@@ -6,20 +6,28 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/list_detail_title"
+        android:id="@+id/list_detail_digit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="list_detail_digit" />
     
     <TextView
-        android:id="@+id/list_detail_number_text"
+        android:id="@+id/list_detail_digit_even"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Number: " />
-    
+        android:layout_height="wrap_content" 
+        android:text="list_detail_digit_even" />
+        
     <TextView
-        android:id="@+id/list_detail_number_digit"
+        android:id="@+id/list_detail_digit_prime"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" 
+        android:text="list_detail_digit_prime" />
+            
+    <TextView
+        android:id="@+id/list_detail_digit_hex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="list_detail_digit_hex" />
+    
     
 </LinearLayout>
