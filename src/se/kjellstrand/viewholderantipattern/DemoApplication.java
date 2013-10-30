@@ -3,7 +3,7 @@ package se.kjellstrand.viewholderantipattern;
 import android.app.Application;
 
 /**
- * Created by erbsman on 7/25/13.
+ * Created by Carl-Emil Kjellstrand on 10/25/13.
  */
 public class DemoApplication extends Application {
    
