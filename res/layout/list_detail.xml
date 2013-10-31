@@ -3,7 +3,7 @@
     android:id="@+id/item_detail_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnCount="2"
+    android:columnCount="3"
     android:padding="8dip"
     android:rowCount="2" >
 
@@ -14,37 +14,51 @@
         android:layout_column="0"
         android:layout_gravity="left|top"
         android:layout_row="0"
-        android:padding="8dip"
-        android:text="digit" />
+        android:padding="8dip" />
 
     <TextView
-        android:id="@+id/list_detail_digit_even"
+        android:id="@+id/list_detail_digit_oct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="1"
         android:layout_gravity="left|top"
         android:layout_row="0"
-        android:padding="8dip"
-        android:text="even" />
-
-    <TextView
-        android:id="@+id/list_detail_digit_prime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_gravity="left|top"
-        android:layout_row="1"
-        android:padding="8dip"
-        android:text="prime" />
+        android:padding="8dip" />
 
     <TextView
         android:id="@+id/list_detail_digit_hex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_gravity="left|top"
+        android:layout_row="0"
+        android:padding="8dip" />
+
+    <TextView
+        android:id="@+id/list_detail_digit_even"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_gravity="left|top"
+        android:layout_row="1"
+        android:padding="8dip" />
+
+    <TextView
+        android:id="@+id/list_detail_digit_prime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_column="1"
         android:layout_gravity="left|top"
         android:layout_row="1"
-        android:padding="8dip"
-        android:text="hex" />
+        android:padding="8dip" />
+
+    <TextView
+        android:id="@+id/list_detail_digit_fibonacci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_gravity="left|top"
+        android:layout_row="1"
+        android:padding="8dip" />
 
 </GridLayout>

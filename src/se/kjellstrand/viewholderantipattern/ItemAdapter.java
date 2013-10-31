@@ -46,32 +46,44 @@ public class ItemAdapter extends BaseAdapter {
 
         Holder h = Holder.get(convertView);
         String digit_text = mContext.getResources().getString(R.string.list_detail_digit);
-        h.digit.setText(String.format(digit_text, digit));
+        h.mDigit.setText(String.format(digit_text, digit));
+
+        String digit_oct_text = mContext.getResources().getString(R.string.list_detail_digit_oct);
+        h.mDigitOct.setText(String.format(digit_oct_text, Integer.toOctalString(digit)));
+
+        String digit_hex_text = mContext.getResources().getString(R.string.list_detail_digit_hex);
+        h.mDigitHex.setText(String.format(digit_hex_text, Integer.toHexString(digit)));
 
         String digit_even_text = mContext.getResources().getString(R.string.list_detail_digit_even);
         String digit_even = digit % 2 == 0 ? "true" : "false";
-        h.digit_even.setText(String.format(digit_even_text, digit_even));
+        h.mDigitEven.setText(String.format(digit_even_text, digit_even));
 
         String digit_primt_text = mContext.getResources().getString(R.string.list_detail_digit_prime);
-        h.digit_prime.setText(String.format(digit_primt_text, !new String(new char[digit]).matches(".?|(..+?)\\1+")));
+        h.mDigitPrime.setText(String.format(digit_primt_text, !new String(new char[digit]).matches(".?|(..+?)\\1+")));
 
-        String digit_hex_text = mContext.getResources().getString(R.string.list_detail_digit_hex);
-        h.digit_hex.setText(String.format(digit_hex_text, Integer.toHexString(digit)));
+        String mDigitFibonacciText = mContext.getResources().getString(R.string.list_detail_digit_fibonacci);
+        h.mDigitFibonacci.setText(String.format(mDigitFibonacciText,
+                ((Math.sqrt(5 * Math.pow((digit), 2) + 4) - Math.round(Math.sqrt(5 * Math.pow((digit), 2) + 4)) == 0) ||
+                (Math.sqrt(5 * Math.pow((digit), 2) - 4) - Math.round(Math.sqrt(5 * Math.pow((digit), 2) - 4)) == 0))));
 
         return convertView;
     }
 
     private static final class Holder {
-        public TextView digit;
-        public TextView digit_even;
-        public TextView digit_prime;
-        public TextView digit_hex;
+        public TextView mDigit;
+        public TextView mDigitOct;
+        public TextView mDigitHex;
+        public TextView mDigitEven;
+        public TextView mDigitPrime;
+        public TextView mDigitFibonacci;
 
         private Holder(View v) {
-            digit = (TextView) v.findViewById(R.id.list_detail_digit);
-            digit_even = (TextView) v.findViewById(R.id.list_detail_digit_even);
-            digit_prime = (TextView) v.findViewById(R.id.list_detail_digit_prime);
-            digit_hex = (TextView) v.findViewById(R.id.list_detail_digit_hex);
+            mDigit = (TextView) v.findViewById(R.id.list_detail_digit);
+            mDigitOct = (TextView) v.findViewById(R.id.list_detail_digit_oct);
+            mDigitHex = (TextView) v.findViewById(R.id.list_detail_digit_hex);
+            mDigitEven = (TextView) v.findViewById(R.id.list_detail_digit_even);
+            mDigitPrime = (TextView) v.findViewById(R.id.list_detail_digit_prime);
+            mDigitFibonacci = (TextView) v.findViewById(R.id.list_detail_digit_fibonacci);
 
             v.setTag(this);
         }
