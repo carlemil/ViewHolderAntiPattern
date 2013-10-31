@@ -40,9 +40,9 @@ public class ItemAdapter extends BaseAdapter {
             holderView = (HolderView) convertView;
         } else {
             holderView = new HolderView(mContext);
-            holderView.initlialize(viewGroup);
+            // holderView.initlialize(viewGroup);
         }
-        holderView.setValues(i);
+        holderView.bind(i);
 
         return holderView;
     }

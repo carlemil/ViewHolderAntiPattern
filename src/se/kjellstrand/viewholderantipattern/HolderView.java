@@ -2,6 +2,7 @@ package se.kjellstrand.viewholderantipattern;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,42 +19,49 @@ public class HolderView extends View {
     private TextView mDigitPrime;
     private TextView mDigitHex;
 
+    private String mDigitText;
+    private String mDigitEvenText;
+    private String mDigitPrimtText;
+    private String mDigitHexText;
+
     public HolderView(Context context) {
         super(context);
         mContext = context;
+        initlialize();
     }
 
     public HolderView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
+        initlialize();
     }
 
     public HolderView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         mContext = context;
+        initlialize();
     }
 
-    public void initlialize(ViewGroup viewGroup) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.list_detail, viewGroup, false);
+    public void initlialize() {
+        View v = LayoutInflater.from(mContext).inflate(R.layout.list_detail,
+                (ViewGroup) getParent(), false);
         mDigitDigit = (TextView) v.findViewById(R.id.list_detail_digit);
         mDigitEven = (TextView) v.findViewById(R.id.list_detail_digit_even);
         mDigitPrime = (TextView) v.findViewById(R.id.list_detail_digit_prime);
         mDigitHex = (TextView) v.findViewById(R.id.list_detail_digit_hex);
+
+        mDigitText = mContext.getResources().getString(R.string.list_detail_digit);
+        mDigitEvenText = mContext.getResources().getString(R.string.list_detail_digit_even);
+        mDigitPrimtText = mContext.getResources().getString(R.string.list_detail_digit_prime);
+        mDigitHexText = mContext.getResources().getString(R.string.list_detail_digit_hex);
     }
 
-    public void setValues(int digit) {
-        String digit_text = mContext.getResources().getString(R.string.list_detail_digit);
-        mDigitDigit.setText(String.format(digit_text, digit));
-
-        String digit_even_text = mContext.getResources().getString(R.string.list_detail_digit_even);
-        String digit_even = digit % 2 == 0 ? "true" : "false";
-        mDigitEven.setText(String.format(digit_even_text, digit_even));
-
-        String digit_primt_text = mContext.getResources().getString(R.string.list_detail_digit_prime);
-        mDigitPrime.setText(String.format(digit_primt_text, !new String(new char[digit]).matches(".?|(..+?)\\1+")));
-
-        String digit_hex_text = mContext.getResources().getString(R.string.list_detail_digit_hex);
-        mDigitHex.setText(String.format(digit_hex_text, Integer.toHexString(digit)));
+    public void bind(int digit) {
+        Log.d("TAG", "bind");
+        mDigitDigit.setText(String.format(mDigitText, digit));
+        mDigitEven.setText(String.format(mDigitEvenText, digit % 2 == 0 ? "true" : "false"));
+        mDigitPrime.setText(String.format(mDigitPrimtText, !new String(new char[digit]).matches(".?|(..+?)\\1+")));
+        mDigitHex.setText(String.format(mDigitHexText, Integer.toHexString(digit)));
     }
 
 }
