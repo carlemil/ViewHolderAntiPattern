@@ -5,13 +5,13 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.TextView;
 
 /**
  * Created by Carl-Emil Kjellstrand on 10/30/13.
  */
-public class HolderView extends View {
+public class HolderView extends GridLayout {
 
     private Context mContext;
     private TextView mDigitDigit;
@@ -43,8 +43,7 @@ public class HolderView extends View {
     }
 
     public void initlialize() {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.list_detail,
-                (ViewGroup) getParent(), false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.list_detail, this);
         mDigitDigit = (TextView) v.findViewById(R.id.list_detail_digit);
         mDigitEven = (TextView) v.findViewById(R.id.list_detail_digit_even);
         mDigitPrime = (TextView) v.findViewById(R.id.list_detail_digit_prime);
