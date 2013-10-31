@@ -2,7 +2,6 @@ package se.kjellstrand.viewholderantipattern;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridLayout;
@@ -14,15 +13,22 @@ import android.widget.TextView;
 public class HolderView extends GridLayout {
 
     private Context mContext;
+
     private TextView mDigitDigit;
+    private TextView mDigitHex;
+    private TextView mDigitOct;
+
     private TextView mDigitEven;
     private TextView mDigitPrime;
-    private TextView mDigitHex;
+    private TextView mDigitFibonacci;
 
     private String mDigitText;
+    private String mDigitHexText;
+    private String mDigitOctText;
+
     private String mDigitEvenText;
     private String mDigitPrimtText;
-    private String mDigitHexText;
+    private String mDigitFibonacciText;
 
     public HolderView(Context context) {
         super(context);
@@ -45,22 +51,30 @@ public class HolderView extends GridLayout {
     public void initlialize() {
         View v = LayoutInflater.from(mContext).inflate(R.layout.list_detail, this);
         mDigitDigit = (TextView) v.findViewById(R.id.list_detail_digit);
+        mDigitHex = (TextView) v.findViewById(R.id.list_detail_digit_hex);
+        mDigitOct = (TextView) v.findViewById(R.id.list_detail_digit_oct);
         mDigitEven = (TextView) v.findViewById(R.id.list_detail_digit_even);
         mDigitPrime = (TextView) v.findViewById(R.id.list_detail_digit_prime);
-        mDigitHex = (TextView) v.findViewById(R.id.list_detail_digit_hex);
+        mDigitFibonacci = (TextView) v.findViewById(R.id.list_detail_digit_fibonacci);
 
         mDigitText = mContext.getResources().getString(R.string.list_detail_digit);
+        mDigitHexText = mContext.getResources().getString(R.string.list_detail_digit_hex);
+        mDigitOctText = mContext.getResources().getString(R.string.list_detail_digit_oct);
         mDigitEvenText = mContext.getResources().getString(R.string.list_detail_digit_even);
         mDigitPrimtText = mContext.getResources().getString(R.string.list_detail_digit_prime);
-        mDigitHexText = mContext.getResources().getString(R.string.list_detail_digit_hex);
+        mDigitFibonacciText = mContext.getResources().getString(R.string.list_detail_digit_fibonacci);
     }
 
     public void bind(int digit) {
-        Log.d("TAG", "bind");
         mDigitDigit.setText(String.format(mDigitText, digit));
+        mDigitOct.setText(String.format(mDigitOctText, Integer.toOctalString(digit)));
+        mDigitHex.setText(String.format(mDigitHexText, Integer.toHexString(digit)));
+
         mDigitEven.setText(String.format(mDigitEvenText, digit % 2 == 0 ? "true" : "false"));
         mDigitPrime.setText(String.format(mDigitPrimtText, !new String(new char[digit]).matches(".?|(..+?)\\1+")));
-        mDigitHex.setText(String.format(mDigitHexText, Integer.toHexString(digit)));
+        mDigitFibonacci.setText(String.format(mDigitFibonacciText,
+                ((Math.sqrt(5 * Math.pow((digit), 2) + 4) - Math.round(Math.sqrt(5 * Math.pow((digit), 2) + 4)) == 0) ||
+                (Math.sqrt(5 * Math.pow((digit), 2) - 4) - Math.round(Math.sqrt(5 * Math.pow((digit), 2) - 4)) == 0))));
     }
 
 }

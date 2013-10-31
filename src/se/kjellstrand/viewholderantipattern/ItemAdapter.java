@@ -36,11 +36,12 @@ public class ItemAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
         HolderView holderView;
+        // Important to not just null check, but rather to a instanceof
+        // since we might get any subclass of view here.
         if (convertView instanceof HolderView) {
             holderView = (HolderView) convertView;
         } else {
             holderView = new HolderView(mContext);
-            // holderView.initlialize(viewGroup);
         }
         holderView.bind(i);
 
