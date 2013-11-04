@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">ViewHolderAntiPattern</string>
-    <string name="list_detail_digit">Digit: %1d</string>
+    <string name="list_detail_digit">Digit: %1s</string>
     <string name="list_detail_digit_hex">In hex: %1s</string>
     <string name="list_detail_digit_oct">In oct: %1s</string>
     <string name="list_detail_digit_even">Even: %1s</string>

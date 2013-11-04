@@ -1,5 +1,7 @@
 package se.kjellstrand.viewholderantipattern;
 
+import se.kjellstrand.viewholderantipattern.data.Digit;
+
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +45,7 @@ public class ItemAdapter extends BaseAdapter {
         } else {
             holderView = new HolderView(mContext);
         }
-        holderView.bind(i);
+        holderView.bind(new Digit(i));
 
         return holderView;
     }

@@ -1,5 +1,7 @@
 package se.kjellstrand.viewholderantipattern;
 
+import se.kjellstrand.viewholderantipattern.data.Digit;
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -65,16 +67,14 @@ public class HolderView extends GridLayout {
         mDigitFibonacciText = mContext.getResources().getString(R.string.list_detail_digit_fibonacci);
     }
 
-    public void bind(int digit) {
+    public void bind(Digit digit) {
         mDigitDigit.setText(String.format(mDigitText, digit));
-        mDigitOct.setText(String.format(mDigitOctText, Integer.toOctalString(digit)));
-        mDigitHex.setText(String.format(mDigitHexText, Integer.toHexString(digit)));
+        mDigitOct.setText(String.format(mDigitOctText, digit.toOctalString()));
+        mDigitHex.setText(String.format(mDigitHexText, digit.toHexString()));
 
-        mDigitEven.setText(String.format(mDigitEvenText, digit % 2 == 0 ? "true" : "false"));
-        mDigitPrime.setText(String.format(mDigitPrimtText, !new String(new char[digit]).matches(".?|(..+?)\\1+")));
-        mDigitFibonacci.setText(String.format(mDigitFibonacciText,
-                ((Math.sqrt(5 * Math.pow((digit), 2) + 4) - Math.round(Math.sqrt(5 * Math.pow((digit), 2) + 4)) == 0) ||
-                (Math.sqrt(5 * Math.pow((digit), 2) - 4) - Math.round(Math.sqrt(5 * Math.pow((digit), 2) - 4)) == 0))));
+        mDigitEven.setText(String.format(mDigitEvenText, digit.isEven()));
+        mDigitPrime.setText(String.format(mDigitPrimtText, digit.isPrime()));
+        mDigitFibonacci.setText(String.format(mDigitFibonacciText,digit.isFibonacci()));
     }
 
 }
