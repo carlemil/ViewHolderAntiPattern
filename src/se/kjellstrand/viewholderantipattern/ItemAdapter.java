@@ -1,5 +1,7 @@
 package se.kjellstrand.viewholderantipattern;
 
+import se.kjellstrand.viewholderantipattern.data.Digit;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,29 +44,26 @@ public class ItemAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.list_detail, viewGroup, false);
         }
 
-        int digit = i;
+        Digit digit = new Digit(i);
 
         Holder h = Holder.get(convertView);
         String digit_text = mContext.getResources().getString(R.string.list_detail_digit);
         h.mDigit.setText(String.format(digit_text, digit));
 
         String digit_oct_text = mContext.getResources().getString(R.string.list_detail_digit_oct);
-        h.mDigitOct.setText(String.format(digit_oct_text, Integer.toOctalString(digit)));
+        h.mDigitOct.setText(String.format(digit_oct_text, digit.toOctalString()));
 
         String digit_hex_text = mContext.getResources().getString(R.string.list_detail_digit_hex);
-        h.mDigitHex.setText(String.format(digit_hex_text, Integer.toHexString(digit)));
+        h.mDigitHex.setText(String.format(digit_hex_text, digit.toHexString()));
 
         String digit_even_text = mContext.getResources().getString(R.string.list_detail_digit_even);
-        String digit_even = digit % 2 == 0 ? "true" : "false";
-        h.mDigitEven.setText(String.format(digit_even_text, digit_even));
+        h.mDigitEven.setText(String.format(digit_even_text, digit.isEven()));
 
         String digit_primt_text = mContext.getResources().getString(R.string.list_detail_digit_prime);
-        h.mDigitPrime.setText(String.format(digit_primt_text, !new String(new char[digit]).matches(".?|(..+?)\\1+")));
+        h.mDigitPrime.setText(String.format(digit_primt_text, digit.isPrime()));
 
         String mDigitFibonacciText = mContext.getResources().getString(R.string.list_detail_digit_fibonacci);
-        h.mDigitFibonacci.setText(String.format(mDigitFibonacciText,
-                ((Math.sqrt(5 * Math.pow((digit), 2) + 4) - Math.round(Math.sqrt(5 * Math.pow((digit), 2) + 4)) == 0) ||
-                (Math.sqrt(5 * Math.pow((digit), 2) - 4) - Math.round(Math.sqrt(5 * Math.pow((digit), 2) - 4)) == 0))));
+        h.mDigitFibonacci.setText(String.format(mDigitFibonacciText, digit.isFibonacci()));
 
         return convertView;
     }

@@ -4,6 +4,10 @@ package se.kjellstrand.viewholderantipattern.data;
 public class Digit {
     private int mDigit;
 
+    public Digit(int i) {
+        mDigit = i;
+    }
+
     public int getDigit() {
         return mDigit;
     }
