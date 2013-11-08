@@ -1,7 +1,5 @@
 package se.kjellstrand.viewholderantipattern;
 
-import se.kjellstrand.viewholderantipattern.data.Digit;
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -74,7 +72,7 @@ public class HolderView extends GridLayout {
 
         mDigitEven.setText(String.format(mDigitEvenText, digit.isEven()));
         mDigitPrime.setText(String.format(mDigitPrimtText, digit.isPrime()));
-        mDigitFibonacci.setText(String.format(mDigitFibonacciText,digit.isFibonacci()));
+        mDigitFibonacci.setText(String.format(mDigitFibonacciText, digit.isFibonacci()));
     }
 
 }

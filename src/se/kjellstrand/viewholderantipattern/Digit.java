@@ -1,19 +1,11 @@
-
-package se.kjellstrand.viewholderantipattern.data;
+package se.kjellstrand.viewholderantipattern;
 
 public class Digit {
-    private int mDigit;
+
+    private final int mDigit;
 
     public Digit(int digit) {
-        mDigit = digit;
-    }
-
-    public int getDigit() {
-        return mDigit;
-    }
-
-    public void setDigit(int mDigit) {
-        this.mDigit = mDigit;
+        this.mDigit = digit;
     }
 
     public boolean isEven() {
