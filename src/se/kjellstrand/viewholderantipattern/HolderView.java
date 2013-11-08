@@ -12,8 +12,6 @@ import android.widget.TextView;
  */
 public class HolderView extends GridLayout {
 
-    private Context mContext;
-
     private TextView mDigitDigit;
     private TextView mDigitHex;
     private TextView mDigitOct;
@@ -32,24 +30,21 @@ public class HolderView extends GridLayout {
 
     public HolderView(Context context) {
         super(context);
-        mContext = context;
-        initlialize();
+        initlialize(context);
     }
 
     public HolderView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mContext = context;
-        initlialize();
+        initlialize(context);
     }
 
     public HolderView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        mContext = context;
-        initlialize();
+        initlialize(context);
     }
 
-    public void initlialize() {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.list_detail, this);
+    public void initlialize(Context context) {
+        View v = LayoutInflater.from(context).inflate(R.layout.list_detail, this);
         mDigitDigit = (TextView) v.findViewById(R.id.list_detail_digit);
         mDigitHex = (TextView) v.findViewById(R.id.list_detail_digit_hex);
         mDigitOct = (TextView) v.findViewById(R.id.list_detail_digit_oct);
@@ -57,12 +52,12 @@ public class HolderView extends GridLayout {
         mDigitPrime = (TextView) v.findViewById(R.id.list_detail_digit_prime);
         mDigitFibonacci = (TextView) v.findViewById(R.id.list_detail_digit_fibonacci);
 
-        mDigitText = mContext.getResources().getString(R.string.list_detail_digit);
-        mDigitHexText = mContext.getResources().getString(R.string.list_detail_digit_hex);
-        mDigitOctText = mContext.getResources().getString(R.string.list_detail_digit_oct);
-        mDigitEvenText = mContext.getResources().getString(R.string.list_detail_digit_even);
-        mDigitPrimtText = mContext.getResources().getString(R.string.list_detail_digit_prime);
-        mDigitFibonacciText = mContext.getResources().getString(R.string.list_detail_digit_fibonacci);
+        mDigitText = context.getResources().getString(R.string.list_detail_digit);
+        mDigitHexText = context.getResources().getString(R.string.list_detail_digit_hex);
+        mDigitOctText = context.getResources().getString(R.string.list_detail_digit_oct);
+        mDigitEvenText = context.getResources().getString(R.string.list_detail_digit_even);
+        mDigitPrimtText = context.getResources().getString(R.string.list_detail_digit_prime);
+        mDigitFibonacciText = context.getResources().getString(R.string.list_detail_digit_fibonacci);
     }
 
     public void bind(Digit digit) {
