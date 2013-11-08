@@ -1,30 +1,25 @@
-
-package se.kjellstrand.viewholderantipattern.data;
+package se.kjellstrand.viewholderantipattern;
 
 public class Digit {
-    private int mDigit;
+    private final int mDigit;
 
-    public int getDigit() {
-        return mDigit;
-    }
-
-    public void setDigit(int mDigit) {
-        this.mDigit = mDigit;
+    public Digit(int digit) {
+        this.mDigit = digit;
     }
 
     public boolean isEven() {
         return mDigit % 2 == 0 ? true : false;
     }
 
-    public boolean isPrime(){
+    public boolean isPrime() {
         return !new String(new char[mDigit]).matches(".?|(..+?)\\1+");
     }
 
-    public boolean isFibonacci(){
+    public boolean isFibonacci() {
         return ((Math.sqrt(5 * Math.pow((mDigit), 2) + 4) -
-                Math.round(Math.sqrt(5 * Math.pow((mDigit), 2) + 4)) == 0) ||
-                (Math.sqrt(5 * Math.pow((mDigit), 2) - 4) -
-                        Math.round(Math.sqrt(5 * Math.pow((mDigit), 2) - 4)) == 0));
+                Math.round(Math.sqrt(5 * Math.pow((mDigit), 2) + 4)) == 0) || (Math.sqrt(5 * Math.pow((mDigit), 2) - 4)
+                -
+                Math.round(Math.sqrt(5 * Math.pow((mDigit), 2) - 4)) == 0));
     }
 
     public String toString() {
