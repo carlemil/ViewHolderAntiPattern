@@ -1,7 +1,5 @@
 package se.kjellstrand.viewholderantipattern;
 
-import se.kjellstrand.viewholderantipattern.data.Digit;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
